@@ -1,0 +1,14 @@
+{
+  "name": "thinkfluent/fanfan-client-php",
+  "description": "PHP Client for FanFan - a Serverless Fan-out, Fan-in Framework for Google Cloud Pub/Sub",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "FanFan\\Client\\": "src"
+    }
+  }
+}
