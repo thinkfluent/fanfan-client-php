@@ -55,7 +55,7 @@ class JobOutcome implements \JsonSerializable
             'taskCounts' => $this->taskCounts,
             'startedTsp' => $this->startedTsp,
             'tookMs' => $this->tookMs,
-            'request' => $this->request,
+            'request' => $this->request->jsonSerialize(),
         ];
         if (!empty($this->payload)) {
             $data['payload'] = $this->payload;
