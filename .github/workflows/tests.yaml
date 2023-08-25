@@ -1,0 +1,35 @@
+name: CI Tests
+on: [push, pull_request]
+jobs:
+  test:
+    name: Automated Tests
+    runs-on: "ubuntu-latest"
+    container: shivammathur/node:latest-amd64
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.composer/cache/files
+          key: dependencies-${{ hashFiles('composer.json') }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer install -o --no-interaction --ignore-platform-reqs
+
+      - name: Lint
+        run: composer run-script lint
+
+      - name: PHP Unit
+        run: composer run-script test
+
+      - name: PHP Stan
+        run: composer run-script static

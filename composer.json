@@ -17,6 +17,13 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^10.3"
+    "phpunit/phpunit": "^10.3",
+    "overtrue/phplint": "^9.0",
+    "phpstan/phpstan": "^1.10"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "lint": "vendor/bin/phplint --exclude=vendor --extensions=php",
+    "static": "vendor/bin/phpstan analyse src tests -c phpstan.neon"
   }
 }
