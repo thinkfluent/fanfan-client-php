@@ -17,6 +17,7 @@ class JobRequest implements \JsonSerializable
     protected ?array $forEachItems = null;
     protected ?string $forEachAs = null;
     protected ?string $taskTopic = null;
+    protected ?string $doneTopic = null;
     protected array $taskAttributes = [];
     protected ?string $rangeAs = null;
     protected ?int $rangeStart = null;
@@ -63,6 +64,12 @@ class JobRequest implements \JsonSerializable
         return $this;
     }
 
+    public function doneTopic(string $topic): self
+    {
+        $this->doneTopic = $topic;
+        return $this;
+    }
+
     public function taskAttributes(array $attribs): self
     {
         $this->taskAttributes = $attribs;
@@ -77,6 +84,11 @@ class JobRequest implements \JsonSerializable
     public function getTaskTopic(): ?string
     {
         return $this->taskTopic;
+    }
+
+    public function getDoneTopic(): ?string
+    {
+        return $this->doneTopic;
     }
 
     public function getTaskAttributes(): array
@@ -140,6 +152,9 @@ class JobRequest implements \JsonSerializable
         }
         if (!empty($this->taskAttributes)) {
             $data['taskAttributes'] = $this->taskAttributes;
+        }
+        if (!empty($this->doneTopic)) {
+            $data['doneTopic'] = $this->doneTopic;
         }
         return $data;
     }
