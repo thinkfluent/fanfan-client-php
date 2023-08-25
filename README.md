@@ -1,5 +1,7 @@
 # PHP Client for FanFan - a Serverless Fan-out, Fan-in Framework for Google Cloud Pub/Sub
 
+[![CI Tests](https://github.com/thinkfluent/fanfan-client-php/actions/workflows/tests.yaml/badge.svg)](https://github.com/thinkfluent/fanfan-client-php/actions/workflows/tests.yaml)
+
 For more detail on FanFan, see the main project here: [thinkfluent/fanfan](https://github.com/thinkfluent/fanfan)
 
 If you want to see a working demo application, see this project: [thinkfluent/fanfan-demo-php](https://github.com/thinkfluent/fanfan-demo-php)
