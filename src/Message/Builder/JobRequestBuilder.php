@@ -43,6 +43,9 @@ class JobRequestBuilder
         if (!empty($requestData['taskTopic'] ?? '')) {
             $request->taskTopic((string)$requestData['taskTopic']);
         }
+        if (!empty($requestData['doneTopic'] ?? '')) {
+            $request->doneTopic((string)$requestData['doneTopic']);
+        }
         if (!empty($requestData['taskAttributes'] ?? [])) {
             $request->taskAttributes((array)$requestData['taskAttributes']);
         }
