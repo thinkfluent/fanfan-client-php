@@ -24,7 +24,7 @@ class TaskBuilderTest extends TestCase
         }
     }
 
-    public function testOptionalPayload()
+    public function testFieldsAndOptionalPayload()
     {
         $task = TaskBuilder::fromPubSub([
             'jobId' => '1234',
@@ -34,6 +34,9 @@ class TaskBuilderTest extends TestCase
                 'some' => 'data',
             ],
         ]);
+        $this->assertEquals('1234', $task->getJobId());
+        $this->assertEquals('1235', $task->getTaskId());
+        $this->assertEquals('delete', $task->getAction());
         $this->assertEquals(['some' => 'data'], $task->getPayload());
     }
 
