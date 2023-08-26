@@ -153,6 +153,7 @@ class JobRequest implements \JsonSerializable
         if (!empty($this->taskAttributes)) {
             $data['taskAttributes'] = $this->taskAttributes;
         }
+        // Optional custom topic for the final JobOutcome message
         if (!empty($this->doneTopic)) {
             $data['doneTopic'] = $this->doneTopic;
         }
