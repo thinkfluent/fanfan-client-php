@@ -30,7 +30,6 @@ class TaskOutcome implements \JsonSerializable
     {
         return [
             'data' => \json_encode($this->jsonSerialize()),
-            'attributes' => [], // for the TaskOutcome
         ];
     }
 

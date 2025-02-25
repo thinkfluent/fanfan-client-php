@@ -8,9 +8,10 @@ class JobRequest implements \JsonSerializable
 {
     use HasPayloadTrait;
 
-    public const FANOUT_TYPE_FIXED = 'FIXED';
-    public const FANOUT_TYPE_RANGE = 'RANGE';
-    public const FANOUT_TYPE_FOREACH = 'FOREACH';
+    public const 
+        FANOUT_TYPE_FIXED = 'FIXED',
+        FANOUT_TYPE_RANGE = 'RANGE',
+        FANOUT_TYPE_FOREACH = 'FOREACH';
 
     protected string $action = 'default';
     protected ?int $fixedTaskCount = null;
@@ -132,7 +133,6 @@ class JobRequest implements \JsonSerializable
     {
         return [
             'data' => \json_encode($this->jsonSerialize()),
-            'attributes' => [], // for the jobRequest
         ];
     }
 
