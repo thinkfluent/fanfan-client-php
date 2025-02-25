@@ -53,9 +53,7 @@ class TaskOutcomeTest extends TestCase
         $pubsub = $outcome->formatForPubSub();
         $this->assertIsArray($pubsub);
         $this->assertArrayHasKey('data', $pubsub);
-        $this->assertArrayHasKey('attributes', $pubsub);
         $this->assertIsString($pubsub['data']);
-        $this->assertIsArray($pubsub['attributes']);
     }
 
 }

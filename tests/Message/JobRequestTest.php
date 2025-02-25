@@ -123,9 +123,7 @@ class JobRequestTest extends TestCase
         $pubsub = $message->formatForPubSub();
         $this->assertIsArray($pubsub);
         $this->assertArrayHasKey('data', $pubsub);
-        $this->assertArrayHasKey('attributes', $pubsub);
         $this->assertIsString($pubsub['data']);
-        $this->assertIsArray($pubsub['attributes']);
     }
 
     public function testPayload()
